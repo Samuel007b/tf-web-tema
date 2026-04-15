@@ -1,20 +1,20 @@
 # Proposta 01
 
-## Título_da_proposta
+## Título: Site Institucional do Restaurante Dona Cida
 
-### Descrição
+### Descrição: O Restaurante Dona Cida, renomado ponto comercial no município de Fruta de Leite, pretende inovar e chegar a novos clientes pela internet, então busca-se desenvolver um site institucional, ou seja, uma página web com foco em conversão de novos clientes, induzindo o cliente/usuário a comparecer e prestigiar o restaurante. Deste modo, este site tem como objetivo principal apresentar um conteúdo persuasivo sobre o possível cliente, induzindo o a “dar uma chance” para o restaurante através de fotos, vídeos, representações “idealizadas” do estabelecimento e o uso de cores leves que remetem ao aconchego e à familiarização. O site também possuirá a descrição dos produtos e serviços oferecidos, enfatizando sua qualidade única e artesanal, de modo a convencer os clientes de que aquilo é realmente algo bom.
 
-### Problema a ser solucionado
+### Problema a ser solucionado: Limitação de acesso aos moradores do próprio município de Fruta de Leite (MG), que moram longe do restaurante. Poucos meios de divulgação do restaurante (apenas Instagram e WhatsApp). Falta de rapidez no atendimento ao cliente. Necessidade de criar um ambiente ainda mais aconchegante aos clientes em geral, de modo a melhorar a visibilidade e a imagem do estabelecimento.
 
-### Público alvo
+### Público alvo: Possíveis novos clientes do Restaurante Dona Cida, além da proprietária do estabelecimento
 
-### Funcionalidades
+### Funcionalidades: Apresentar os produtos (pratos servidos pelo restaurante) aos clientes, incluindo fotos, descrições, avaliações e preço. Obter avaliações e feedbacks, para corrigir possíveis problemas e realizar possíveis melhorias na interação com o cliente. Conversão de novos clientes a partir das divulgações de eventos, ou simplesmente pelo cardápio. Divulgação de promoções especiais periódicas, com foco na familiarização e venda de pratos novos. Mostrar os valores e diferenciais do restaurante de modo a destacá-lo regionalmente.
 
 ---
 
 # Proposta 02
 
-## Título: Criador de ficha do RPG Falsa Realidade — personagens, itens, dados online, NPCs e monstros
+## Título: Criador de Ficha do RPG Falsa Realidade (personagens, itens, dados online, NPCs e monstros)
 
 ### Descrição: Uma plataforma online de RPG que funciona como uma ferramenta digital completa, permitindo criar fichas de personagens, gerenciar campanhas, automatizar combates e rolar dados com facilidade, baseada no sistema do RPG brasileiro Falsa Realidade.
 
@@ -28,7 +28,7 @@
 
 # Proposta 03
 
-## Título: Museu de Exibição de Itens Esportivos Autografados
+## Título: Museu Virtual de Exibição de Itens Esportivos Autografados
 
 ### Descrição: Observamos que os jogadores, na maioria das vezes, se aposentaram de suas atividades após muito tempo de profissão. Com isso, muitas vezes, a única lembrança que deixam são vídeos marcantes e autógrafos que guardam sua atuação tão inspiradora no esporte. O site preserva essa valorização e funciona como um gatilho para relembrar grandes jogadores. A proposta do site é trazer itens autografados por famosos e ex-famosos do ramo esportivo, valorizando a cultura esportiva brasileira.
 
