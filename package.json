@@ -1,7 +1,7 @@
 {
   "name": "tf-web-tema",
   "version": "1.0.0",
-  "description": "Athos Silvano Lopes - https://github.com/AthosMcqueen",
+  "description": "Trabalho final da disciplina de WEB",
   "main": "index.js",
   "type": "module",
   "scripts": {

@@ -8,3 +8,78 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+// Enum — valores fixos para o campo tipo
+enum TipoProduto {
+  BEBIDA        // bebida
+  UNITARIO      // produto unitário
+  PRATO_FEITO   // prato feito
+  PRATO_QUILO   // prato no quilo
+}
+
+// Model Produto — representa a tabela "Produto" no banco
+model Produto {
+  id            Int         @id @default(autoincrement())   // PK, gerado automaticamente
+  nome          String      @unique                         // obrigatório e único
+  foto          String                                      // obrigatório (URL do Uploadcare)
+  destaque      Boolean                                     // obrigatório
+  tipo          TipoProduto                                 // obrigatório
+  avaliacoes    Avaliacao[]                                 // relação 1:N — um produto tem muitas avaliações
+  bebida        Bebida?                                     // opcional (depende do tipo de produto)
+  unitario      Unitario?                                   // opcional (depende do tipo de produto)
+  pratoFeito    PratoFeito?                                 // opcional (depende do tipo de produto)
+  pratoQuilo    PratoQuilo?                                 // opcional (depende do tipo de produto)
+}
+
+// Model Avaliacao — representa a tabela "Avaliacao" no banco
+model Avaliacao {
+  id             Int        @id @default(autoincrement())   // PK, gerado automaticamente
+  descricao      String                                     // obrigatório
+  quantEstrelas  Int                                        // obrigatório
+  midia          String?                                    // opcional (URL do Uploadcare)
+  destaque       Boolean                                    // obrigatório
+  nomeCliente    String                                     // obrigatório
+  fotoCliente    String?                                    // opcional (URL do Uploadcare)
+  produtoId      Int                                        // FK, obrigatório
+  criadoEm       DateTime   @default(now())                 // data de criação automática
+  produto        Produto    @relation(fields: [produtoId], references: [id])  // relação 1:N — um produto tem muitas avaliações
+}
+
+// Model Bebida — representa a tabela "Bebida" no banco
+model Bebida {
+  produtoId      Int        @id                             // FK, obrigatório
+  volume         String                                     // obrigatório
+  marca          String                                     // obrigatório
+  preco          Decimal    @db.Decimal(10,2)               // obrigatório
+  produto        Produto    @relation(fields: [produtoId], references: [id])  // relação de herança com Produto
+}
+
+// Model Unitario — representa a tabela "Unitario" no banco
+model Unitario {
+  produtoId      Int        @id                             // FK, obrigatório
+  marca          String                                     // obrigatório
+  precoUni       Decimal    @db.Decimal(10,2)               // obrigatório
+  produto        Produto    @relation(fields: [produtoId], references: [id])  // relação de herança com Produto
+}
+
+// Model PratoFeito — representa a tabela "PratoFeito" no banco
+model PratoFeito {
+  produtoId      Int        @id                             // FK, obrigatório
+  preco          Decimal    @db.Decimal(10,2)               // obrigatório
+  produto        Produto    @relation(fields: [produtoId], references: [id])  // relação de herança com Produto
+}
+
+// Model PratoQuilo — representa a tabela "PratoQuilo" no banco
+model PratoQuilo {
+  produtoId      Int        @id                             // FK, obrigatório
+  precoKg        Decimal    @db.Decimal(10,2)               // obrigatório
+  produto        Produto    @relation(fields: [produtoId], references: [id])  // relação de herança com Produto
+}
+
+// Model UserAdmin — representa a tabela "UserAdmin" no banco
+model UserAdmin {
+  id             Int        @id @default(autoincrement())   // PK, gerado automaticamente
+  login          String     @unique                         // obrigatório e único
+  senhaHash      String                                     // hash da senha (nunca retornado pela API)
+  criadoEm       DateTime   @default(now())                 // data de criação automática
+}
