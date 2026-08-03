@@ -28,7 +28,7 @@ Apresentar os produtos (pratos servidos pelo restaurante) aos clientes, incluind
 ### Wireframe - Figma: https://www.figma.com/design/bcVaZHdqi5LrzrUorzMwzM/Wireframe---Site-Dona-Cida
 
 ## Modelo Conceitual
-### Link: [db/conceitual.png](https://github.com/Samuel007b/tf-web-tema/blob/main/db/conceitual.png)
+### Link: [db/conceitual.png](./db/conceitual.png)
 
 ### Entidades:
 Produto: ...
@@ -53,10 +53,10 @@ PratoFeito herda de Produto: ...
 PratoQuilo herda de Produto: ...
 
 ## Modelo Lógico
-### Link: [prisma/schema.prisma](https://github.com/Samuel007b/tf-web-tema/blob/main/prisma/schema.prisma)
+### Link: [prisma/schema.prisma](./prisma/schema.prisma)
 
 ## Modelo Físico
-### Link: [prisma/seed.js](https://github.com/Samuel007b/tf-web-tema/blob/main/prisma/seed.js)
+### Link: [prisma/seed.js](./prisma/seed.js)
 
 ## Evidência funcional
 Prints das tabelas do Neon
