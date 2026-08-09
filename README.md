@@ -59,4 +59,10 @@ PratoQuilo herda de Produto: ...
 ### Link: [prisma/seed.js](./prisma/seed.js)
 
 ## Evidência funcional
-Prints das tabelas do Neon
+Prints das tabelas do Neon após rodar `npx prisma migrate dev` e `npx prisma db seed`.
+
+![Produtos populados](./db/Produtos-seed.png)
+
+![Avaliações populadas](./db/Avaliações-seed.png)
+
+![UserAdmin populado](./db/UserAdmin-seed.png)
