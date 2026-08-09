@@ -32,25 +32,35 @@ Apresentar os produtos (pratos servidos pelo restaurante) aos clientes, incluind
 
 ### Entidades:
 Produto: ...
+    Superclasse que possui a chave primária ID (uníca,obrigatória e autoincrement) e os atributos Foto(obrigatório), Nome(obrigatório e único) e Destaque(obrigatório)
 
 Bebida: ...
+    Subclasse de Produto que possui a chave primária estrangeira id e produtoId(única e obrigatória, referenciando Produto), e os atributos volume(obrigatório), marca(obrigatório) e preco(obrigatório).
 
 Unitario: ...
+    Subclasse de Produto que possui a chave primária entrangeira id e produtoId (única e obrigatória, referenciando Produto), e os atributos marca (obrigatório) e precoUni (obrigatório).
 
 PratoFeito: ...
+    Subclasse de Produto que possui a chave primária estrangeira id e produtoId (única e obrigatória, referenciando Produto), e o atributo preco(obrigatório).
 
 PratoQuilo: ...
+    Subclasse de Produto que possui a chave primária estrangeira id e produtoId (única e obrigatória, referenciado Produto), e o atributo precoKg (obrigatório)
 
 ### Relacionamentos:
 Avaliacao recebe Produto: ...
+    Relacionamento 1:N entre Produto e Avaliacao. Em avaliacao, o campo produtoId é a chave estrangeira (FK) obrigatória que referencia a chave primária id de Produto (produto). Cada avaliação deve obrigatoriamente pertencer a exatamente 1 produto (1,1), enquanto um produto pode possuir de 0 a N avaliações.
 
 Bebida herda de Produto: ...
+    Relacionamento 1:1 de especialização/herança. A entidade Bebida possui chave estrangeira (FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de produto. Na entidade Produto, o campo bebida é opcional, tornando a relação (0,1) do lado de Produto e (1,1) do lado de Bebida.
 
 Unitario herda de Produto: ...
+    Relacionamento 1:1 de especialização/herança. A entidade Unitario possui a chave estrangeira (FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de Produto. Na entidade Produto, o campo unitario é opcional tornando a relação(0,1) do lado de Produto e (1,1) do lado de Unitario
 
 PratoFeito herda de Produto: ...
+    Relacionamento 1:1 de especialização/herança. A entidade PratoFeito possui a chave estrangeira(FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de Produto. Na entidade Produto, o campo pratoFeito é opcional, tornando a relação(0,1) do lado de Produto e (1,1) do lado de PratoFeito.
 
 PratoQuilo herda de Produto: ...
+    Relacionamento 1:1 de especialização/herança. A entidade PratoQuilo possui a chave estrangeira (FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de Produto. Na entidade Produto, o campo pratoQuilo é opcional, tornando a relação (0,1) do lado de Produto e (1,1) do lado de PratoQuilo.
 
 ## Modelo Lógico
 ### Link: [prisma/schema.prisma](./prisma/schema.prisma)
