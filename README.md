@@ -31,28 +31,12 @@ Apresentar os produtos (pratos servidos pelo restaurante) aos clientes, incluind
 ### Link: [db/conceitual.png](./db/conceitual.png)
 
 ### Entidades:
-Produto: Superclasse que representa os alimentos comercializados no restaurante, possuindo a chave primária ID (uníca, obrigatória e autoincrementada) e os atributos foto (obrigatório), nome (obrigatório e único) e destaque(obrigatório).
-
-Bebida: Subclasse de Produto (uma categoria dos produtos comercializados no restaurante) que possui a chave primária estrangeira id e produtoId (única e obrigatória, referenciando Produto) e os atributos volume (obrigatório), marca (obrigatório) e preco (obrigatório).
-
-Unitario: Subclasse de Produto (uma categoria dos produtos comercializados no restaurante) que possui a chave primária entrangeira id e produtoId (única e obrigatória, referenciando Produto) e os atributos marca (obrigatório) e precoUni (obrigatório).
-
-PratoFeito: Subclasse de Produto (uma categoria dos produtos comercializados no restaurante) que possui a chave primária estrangeira id e produtoId (única e obrigatória, referenciando Produto), e o atributo preco(obrigatório).
-
-PratoQuilo: Subclasse de Produto (uma categoria dos produtos comercializados no restaurante) que possui a chave primária estrangeira id e produtoId (única e obrigatória, referenciado Produto) e o atributo precoKg (obrigatório).
+Produto: Classe que representa os alimentos comercializados no restaurante, possuindo a chave primária ID (uníca, obrigatória e autoincrementada) e os atributos foto (obrigatório), nome (obrigatório e único), destaque (obrigatório), preço (obrigatório), descrição (obrigatório) e categoria (obrigatória e que pode ser do tipo bebida, unitário, prato feito ou prato quilo).
 
 UserAdmin: Classe que representa o usuário administrativo da aplicação, possuindo a chave primária ID (uníca, obrigatória e autoincrementada), além dos atributos login (obrigatório e único), senhaHash (obrigatório e nunca retornado em consultas da API) e criadoEm (criado automaticamente e que registra o instante exato de criação). Esta é uma entidade especial que não possui nenhum relacionamento com outras entidades, apenas tem a funcionalidade de autenticação no site administrativo da aplicação.
 
 ### Relacionamentos:
 Avaliacao recebe Produto: Relacionamento 1:N entre Produto e Avaliacao. Em avaliacao, o campo produtoId é a chave estrangeira (FK) obrigatória que referencia a chave primária id de Produto (produto). Cada avaliação deve obrigatoriamente pertencer a exatamente 1 produto (1,1), enquanto um produto pode possuir de 0 a N avaliações.
-
-Bebida herda de Produto: Relacionamento 1:1 de especialização/herança. A entidade Bebida possui chave estrangeira (FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de produto. Na entidade Produto, o campo bebida é opcional, tornando a relação (0,1) do lado de Produto e (1,1) do lado de Bebida.
-
-Unitario herda de Produto: Relacionamento 1:1 de especialização/herança. A entidade Unitario possui a chave estrangeira (FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de Produto. Na entidade Produto, o campo unitario é opcional tornando a relação (0,1) do lado de Produto e (1,1) do lado de Unitario.
-
-PratoFeito herda de Produto: Relacionamento 1:1 de especialização/herança. A entidade PratoFeito possui a chave estrangeira(FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de Produto. Na entidade Produto, o campo pratoFeito é opcional, tornando a relação (0,1) do lado de Produto e (1,1) do lado de PratoFeito.
-
-PratoQuilo herda de Produto: Relacionamento 1:1 de especialização/herança. A entidade PratoQuilo possui a chave estrangeira (FK) produtoId obrigatória e única, que também atua como chave primária (PK) referenciando o id de Produto. Na entidade Produto, o campo pratoQuilo é opcional, tornando a relação (0,1) do lado de Produto e (1,1) do lado de PratoQuilo.
 
 ## Modelo Lógico
 ### Link: [prisma/schema.prisma](./prisma/schema.prisma)
@@ -61,10 +45,10 @@ PratoQuilo herda de Produto: Relacionamento 1:1 de especialização/herança. A 
 ### Link: [prisma/seed.js](./prisma/seed.js)
 
 ## Evidência funcional
-Prints das tabelas do BD feitos a partir do Prisma Studio após executar `npx prisma migrate dev` (construindo fisicamente as tabelas do BD) e `npx prisma db seed` (cadastrando novos registros/linhas).
+Prints das tabelas do BD feitos a partir do Prisma Studio após executar `npx prisma migrate dev` e `npx prisma generate` (construindo fisicamente as tabelas do BD) e `npx prisma db seed` (cadastrando novos registros/linhas).
 
 ![Produtos populados](./db/Produtos-seed.png)
 
-![Avaliações populadas](./db/Avaliações-seed.png)
+![Avaliações populadas](./db/Avaliacoes-seed.png)
 
 ![UserAdmin populado](./db/UserAdmin-seed.png)

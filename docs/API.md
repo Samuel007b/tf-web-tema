@@ -21,33 +21,18 @@
 ## Produtos
   
     ### GET /produtos
-    ### GET /produtos/bebida
-    ### GET /produtos/unitario
-    ### GET /produtos/pratofeito
-    ### GET /produtos/pratoquilo
     ### GET /produtos/:id
-    ### GET /produtos/destaque
-    ### POST /produtos/bebida
-    ### POST /produtos/unitario
-    ### POST /produtos/pratofeito
-    ### POST /produtos/pratoquilo
-    ### PUT /produtos/bebida/:id
-    ### PUT /produtos/unitario/:id
-    ### PUT /produtos/pratofeito/:id
-    ### PUT /produtos/pratoquilo/:id
+    ### POST /produtos
+    ### PUT /produtos/:id
     ### DELETE /produtos/:id
 
 ## Avaliações
 
     ### GET /avaliacoes
-    ### GET /avaliacoes/midia
-    ### GET /avaliacoes/estrelas
     ### GET /avaliacoes/:id
-    ### GET /avaliacoes/destaque
-    ### GET /avaliacoes/destaque/midia
-    ### GET /avaliacoes/destaque/estrelas
     ### PUT /avaliacoes/:id
     ### POST /avaliacoes
+    ### DELETE /avaliacoes/:id
 
 ## CORS
 
