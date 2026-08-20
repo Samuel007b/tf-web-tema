@@ -39,5 +39,8 @@
     "@prisma/engines@6.19.3": true,
     "prisma@6.19.3": true,
     "bcrypt@6.0.0": true
-  }
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.0"
+  } 
 }
